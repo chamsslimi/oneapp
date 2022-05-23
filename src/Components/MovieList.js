@@ -1,7 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import MovieCard from './MovieCard';
 function MovieList() {
-  const movies=[
+  const[movies,setMovies] =useState([
     {
         title: "Titanic",
         description:
@@ -82,10 +82,12 @@ function MovieList() {
         rate: 3,
       }  
     
-    ];
+    ]) ;
   return (
 
-    <div > {movies.map((movie,i) =>(<MovieCard props={movie} key={i} />))}
+    <div style={{display:'flex',
+    justifyContent:'space-around',alignItems:'center',
+    flexWrap:'wrap'}}> {movies.map((movie,i) =>(<MovieCard movie={movie} key={i} />))}
   </ div> );
   }
   

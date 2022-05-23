@@ -1,16 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Container, Form, FormControl, Nav, NavDropdown,Button, Navbar } from 'react-bootstrap'
 
 function NavBar() {
+   const [text,setText]=useState("Titanic");    
+ const searchfilm =(text)=> {setText({movies:movies.filter(movie=>movie.title!==text)})
+     ;
+   }
   return (
-    <div><Navbar bg="dark" variant="dark">
+    <div> <Navbar bg="dark" variant="dark">
     <Container fluid>
       <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
           className="me-auto my-2 my-lg-0"
-          style={{ maxHeight: '100px' }}
+          style= {{ maxHeight: '100px' }}
           navbarScroll
         >
           <Nav.Link href="#action1">Home</Nav.Link>
@@ -28,14 +32,14 @@ function NavBar() {
           </Nav.Link>
         </Nav>
         
-        <Form className="d-flex" style={{paddingRight:'10px'}}>
+        <Form className="d-flex" style= {{paddingRight:'10px'}}>
           <FormControl
             type="search"
             placeholder="Search"
             className="me-2"
             aria-label="Search"
           />
-          <Button variant="outline-success">Search</Button>
+           <Button variant="outline-success" onClick={()=>serachfilm(movie.title)}>Search</Button> 
         </Form>
         <Form className="d-flex" >
           <FormControl
@@ -50,7 +54,7 @@ function NavBar() {
         
       </Navbar.Collapse>
     </Container>
-  </Navbar></div>
+  </Navbar> </ div>
   )
 }
 
